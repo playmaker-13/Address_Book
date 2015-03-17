@@ -13,6 +13,6 @@ namespace Address_Book.Models
         {
         }
 
-        public DbSet<Record> Records { get; set; }
+        public DbSet<Abonent> Abonents { get; set; }
     }
 }

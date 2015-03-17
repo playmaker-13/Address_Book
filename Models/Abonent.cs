@@ -7,11 +7,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Address_Book.Models
 {
-    public class Record
+    public class Abonent
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int RecordID { get; set; }
+        public int AbonentID { get; set; }
 
         [Required, StringLength(100), Display(Name = "Last_Name")]
         public string LastName { get; set; }

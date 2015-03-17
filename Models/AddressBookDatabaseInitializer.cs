@@ -6,29 +6,29 @@ using System.Data.Entity;
 
 namespace Address_Book.Models
 {
-  public class AddressBookDatabaseInitializer : DropCreateDatabaseAlways<AddressBookDatabaseContext> //DropCreateDatabaseIfModelChanges<RecordContext>
+  public class AddressBookDatabaseInitializer : DropCreateDatabaseAlways<AddressBookDatabaseContext> 
   {
     protected override void Seed(AddressBookDatabaseContext context)
     {
-         GetRecords().ForEach(p => context.Records.Add(p));
+         GetRecords().ForEach(p => context.Abonents.Add(p));
     }
     
-    private static List<Record> GetRecords()
+    private static List<Abonent> GetRecords()
     {
-      var records = new List<Record> 
+      var records = new List<Abonent> 
       {
-                new Record
+                new Abonent
                 {
-                    RecordID = 1,
+                    AbonentID = 1,
                     Name = "Bober",
                     LastName = "Bobrenko", 
                     Patronymic="Bobrenkovich",
                     Phone = "0123454566",
                     Address = "SomeCountry, SomeCity, SomeStreet 51/29"
                },
-                new Record 
+                new Abonent 
                 {
-                    RecordID = 2,
+                    AbonentID = 2,
                     Name = "Boberiko",
                     LastName = "Boberenko", 
                     Patronymic="Bobrenkovich",

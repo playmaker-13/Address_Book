@@ -15,10 +15,10 @@ namespace Address_Book
         {
 
         }
-        public IQueryable<Record> GetRecords()
+        public IQueryable<Abonent> GetRecords()
         {
             var _db = new Address_Book.Models.AddressBookDatabaseContext();
-            IQueryable<Record> query = _db.Records;
+            IQueryable<Abonent> query = _db.Abonents;
             return query;
         }
     }

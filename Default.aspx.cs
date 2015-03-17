@@ -30,15 +30,15 @@ namespace Address_Book
         {
             try
             {
-                Record newRecord = DbContext.Records.Create();
+                Abonent newRecord = DbContext.Abonents.Create();
                 newRecord.LastName = LastName.Text;
                 newRecord.Name = Name.Text;
                 newRecord.Patronymic = Patronymic.Text;
                 newRecord.Phone = Phone.Text;
                 newRecord.Address = Address.Text;
-                DbContext.Records.Add(newRecord);
+                DbContext.Abonents.Add(newRecord);
                 DbContext.SaveChanges();
-                lblStatus.Text = "ID новой записи: " + newRecord.RecordID;
+                lblStatus.Text = "ID новой записи: " + newRecord.AbonentID;
             }
             catch(Exception ex)
             {
@@ -88,7 +88,7 @@ namespace Address_Book
                 //    lblStatus.Text = "Таблица пустая";
                 //}
 
-                var recID = DbContext.Records.OrderByDescending(r => r.RecordID).Select(r => new { RecordId = r.RecordID }).FirstOrDefault();
+                var recID = DbContext.Abonents.OrderByDescending(r => r.AbonentID).Select(r => new { RecordId = r.AbonentID }).FirstOrDefault();
                 if (recID != null)
                 {
                     lblStatus.Text = "ID последней записи: " + recID.RecordId;
